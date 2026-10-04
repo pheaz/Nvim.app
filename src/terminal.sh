@@ -148,9 +148,9 @@ launch_iterm2() {
     NVIM_COMMAND="$1" /usr/bin/osascript <<'EOF_AS'
 set nvimCommand to system attribute "NVIM_COMMAND"
 set shellCommand to "/bin/zsh -lic " & quoted form of nvimCommand
-set wasRunning to application "iTerm2" is running
+set wasRunning to application id "com.googlecode.iterm2" is running
 
-tell application "iTerm2"
+tell application id "com.googlecode.iterm2"
     launch
     if wasRunning then
         create window with default profile command shellCommand
